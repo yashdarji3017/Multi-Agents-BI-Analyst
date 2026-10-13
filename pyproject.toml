@@ -1,0 +1,45 @@
+[project]
+name = "businessinsight-ai"
+version = "0.1.0"
+description = "Multi-Agent Business Intelligence Analyst using Microsoft Agent Framework and Google Gemini"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "agent-framework>=1.21.0",
+    "agent-framework-gemini>=1.0.0b261008",
+    "fastapi>=0.141.1",
+    "numpy>=2.5.4",
+    "pandas>=3.0.6",
+    "plotly>=7.1.0",
+    "pydantic>=2.14.1",
+    "pydantic-settings>=2.15.0",
+    "python-dotenv>=1.2.4",
+    "requests>=2.31.0",
+    "streamlit>=1.65.0",
+    "uvicorn>=0.54.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "ruff>=0.4.0",
+]
+
+[project.scripts]
+businessinsight-api = "businessinsight.main:start_api"
+businessinsight-dashboard = "businessinsight.main:start_dashboard"
+
+[build-system]
+requires = ["uv_build>=0.12.9,<0.13.0"]
+build-backend = "uv_build"
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W", "B", "C4", "UP"]
+ignore = ["E501"]
+
+[tool.uv.build-backend]
+module-name = "businessinsight"
+module-root = "src"

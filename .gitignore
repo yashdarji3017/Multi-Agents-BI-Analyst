@@ -1,0 +1,39 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+*.egg
+
+# Virtual environments
+.venv/
+env/
+venv/
+
+# Environment files and credentials (NEVER commit secrets)
+.env
+.env.*
+!.env.example
+
+# Datasets - raw data should never be committed to git
+data/raw/*
+!data/raw/.gitkeep
+!data/README.md
+
+# Application outputs
+outputs/reports/*
+!outputs/reports/.gitkeep
+outputs/charts/*
+!outputs/charts/.gitkeep
+
+# IDE and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Logs and temporary files
+*.log
+scratch/
